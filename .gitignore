@@ -1,0 +1,52 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Caches
+*.pyc
+.cache/
+
+# Logs and databases
+*.log
+*.sqlite3
+
+# Django
+*.pyc
+*.pyo
+__pycache__
+local_settings.py
+
+# Secret key
+secret_key.txt
+
+# Media files
+media/
+
+# Static files
+static/
+
+# Virtual environment
+env/
+.env/
+.env
+
+# IDE-specific files
+.idea/
+.vscode/
+
+# Compiled Python files
+*.pyc
+
+# Compiled C extension
+*.so
+
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+
+# Migrations
+migrations/
