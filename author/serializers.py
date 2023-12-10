@@ -17,7 +17,8 @@ class AuthorSerializer(serializers.ModelSerializer):
         fields = ['url', 'user', 'about']
 
     def create(self, validated_data: OrderedDict):
-        user_data = validated_data.pop("user")
+        user_data: OrderedDict = validated_data.pop("user")
+        user_data['username'] = '@%s%s' % (user_data.get('first_name').lower(), user_data.get('last_name').lower())
         user = User.objects.create(**user_data)
         user.save()
 
