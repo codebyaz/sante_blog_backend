@@ -1,4 +1,5 @@
 from django.utils.text import slugify
+from django.utils import timezone
 from django.db import models
 
 from category.models import Category
@@ -14,6 +15,7 @@ class Post(models.Model):
     image_url = models.CharField(max_length=250)
     category = models.ForeignKey(Category, related_name='posts', null=True, on_delete=models.SET_NULL)
     author = models.ForeignKey(Author, related_name='posts', on_delete=models.CASCADE)
+    created_at = models.DateTimeField(default=timezone.now)
 
     def save(self, *args, **kwargs) -> None:
         self.slug = slugify(self.title)
