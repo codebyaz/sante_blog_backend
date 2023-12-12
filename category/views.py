@@ -9,5 +9,5 @@ class CategoryViewSet(viewsets.ModelViewSet):
     """
     queryset = Category.objects.all()
     lookup_field = 'slug'
-    permission_classes = [permissions.IsAdminUser]
+    permission_classes = [permissions.IsAuthenticatedOrReadOnly]
     serializer_class = CategorySerializer
