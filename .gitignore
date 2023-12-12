@@ -49,5 +49,4 @@ env/
 Thumbs.db
 
 # Migrations
-migrations/
 fixtures.json
