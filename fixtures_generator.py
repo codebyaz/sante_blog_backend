@@ -1,4 +1,5 @@
 from django.contrib.auth.models import User
+from django.utils.text import slugify
 import json
 from faker import Faker
 
@@ -45,17 +46,25 @@ for i in range(6, 11):
 
 # Create posts
 for i, j, k in zip(range(11, 26), [6, 7, 8, 9, 10] * 3, [1, 2, 3, 4, 5] * 3):
+    
+    content = ''
+    for _ in range(5):
+        content = f"{content}//n/n{fake.paragraph(5)}"
+
+    title = fake.sentence(12)
+    slug = slugify(title)
+
     data.append({
         "model": "post.post",
         "pk": i,
         "fields": {
-            "title": f"Post title {i}",
-            "slug": f"post-title-{i}",
-            "subtitle": f"Post {i}'s subtitle",
-            "content": fake.text(350),  # Generate a fake text with about 350 characters
-            "reading_duration": i % 10 + 1,  # Random reading duration
-            "extra_content": f"Extra content for Post {i}",
-            "image_url": f"https://example.com/images/post-{i}.png",
+            "title": title,
+            "slug": slug,
+            "subtitle": fake.sentence(15),
+            "content": content,
+            "reading_duration": i % 10 + 1,
+            "extra_content": fake.sentence(15),
+            "image_url": fake.url(),
             "category": j,
             "author": k,
         }
