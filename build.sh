@@ -7,4 +7,4 @@ echo '### collecting static files ###'
 python3 manage.py collectstatic
 
 echo '### create superuser ###'
-python3 manage.py createsuperuser $ADMIN_USER $ADMIN_EMAIL --noinput
+python3 manage.py createsuperuser --username $ADMIN_USER --email $ADMIN_EMAIL --noinput
