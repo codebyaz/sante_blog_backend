@@ -7,7 +7,7 @@
     "routes": [
         {
             "src": "/(.*)",
-            "dest": "djangoprojectname/wsgi.py"
+            "dest": "sante_blog_backend/wsgi.py"
         }
     ]
 }
