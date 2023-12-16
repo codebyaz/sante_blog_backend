@@ -1,5 +1,3 @@
-source .env
-
 # install requirements
 echo '### installing requirements to allow running django manage ###'
 pip install -r requirements.txt
