@@ -3,8 +3,11 @@
 echo '### creating venv ###'
 python3 -m venv env
 
-echo '### activate venv ###'
+echo '### activating venv ###'
 source env/bin/activate
+
+echo '### ensuring pip is up-to-date ###'
+python3 -m pip install --upgrade pip
 
 echo '### installing requirements to allow running django manage ###'
 pip install -r requirements.txt
@@ -16,4 +19,4 @@ echo '### running migrations ###'
 python3 manage.py migrate
 
 echo '### create superuser ###'
-python3 manage.py createsuperuser --noinput
+python3 manage.py createsuperuser --noinput --skip-checks
