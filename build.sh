@@ -20,3 +20,7 @@ python3 manage.py migrate
 
 echo '### create superuser ###'
 python3 manage.py createsuperuser --noinput --skip-checks
+
+if [ $? -ne 0 ]; then
+  echo "user already exists"
+fi
