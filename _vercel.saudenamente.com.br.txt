@@ -1,0 +1,1 @@
+vc-domain-verify=www.saudenamente.com.br,71b66ff47b9997784a4e
