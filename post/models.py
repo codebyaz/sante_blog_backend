@@ -16,6 +16,7 @@ class Post(models.Model):
     category = models.ForeignKey(Category, related_name='posts', null=True, on_delete=models.SET_NULL)
     author = models.ForeignKey(Author, related_name='posts', on_delete=models.CASCADE)
     created_at = models.DateTimeField(default=timezone.now)
+    sources = models.TextField(default=None, null=True, blank=True)
 
     def __str__(self) -> str:
         return '%s, %s, %s' % (self.title, self.subtitle, self.category.name)
